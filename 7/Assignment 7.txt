@@ -1,0 +1,28 @@
+7. both_ends:
+Input a string s, output a string made of the first 2
+and the last 2 chars of the original string,
+so 'spring' yields 'spng'. However, if the string length
+is less than 2, return string s instead the empty string.
+
+
+//DECLARATION 
+DECLARE STR1,STR2 : STRING
+DECLARE a : INTEGER
+
+//INITIALISATION
+STR1 ← ""
+STR2 ← ""
+i ← 0
+
+//INPUT
+INPUT "ENTER STRING TO PROCESS :",STR1
+
+//PROCESS
+a ← LEN(STR1)
+IF 
+  a>2 THEN STR2 ← LEFT(STR1,2) & RIGHT(STR1,2)
+      ELSE STR2 ← STR1
+ENDIF
+
+//OUTPUT
+OUTPUT "PROCESSED STRING :",STR2

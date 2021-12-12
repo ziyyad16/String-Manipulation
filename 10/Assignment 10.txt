@@ -1,0 +1,37 @@
+10. verbing:
+Given a string, if its length is at least 3,
+add 'ing' to its end.
+Unless it already ends in 'ing', in which case
+add 'ly' instead.
+If the string length is less than 3, leave it unchanged.
+Return the resulting string.
+examples:
+input 'end' --> 'ending'
+input 'ending' --> 'endingly'
+input 'go' --> 'go'
+
+
+//DECLARATION
+DECLARE STR1,STR2 : STRINGS
+DECLARE a : INTEGER
+
+//INITIALISATION
+STR1 ← ""
+STR2 ← ""
+a ← 0
+
+//INPUT
+INPUT "STRING TO PROCESS :",STR1
+
+//PROCESS
+ a  ←  Len(STR1)
+        STR1  ←  LCase(STR1)
+        If a < 3 Then STR2  ←  STR1
+        If a > 2 And Right(STR1, 3)  ←  "ing" Then
+            STR2  ←  STR1 & "ly"
+        ElseIf a > 2 And Right(STR1, 3) <> "ing" Then
+            STR2  ←  STR1 & "ing"
+            End If
+
+//OUTPUT
+OUTPUT "PROCESSED STRING :",STR2

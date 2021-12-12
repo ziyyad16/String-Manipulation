@@ -1,0 +1,36 @@
+
+1. Find if the input string has all the alphabets (case neutral).
+
+//DECLARATIONS
+DECLARE Str1, alphabets : STRING
+DECLARE isPangram : BOOLEAN
+DECLARE i : INTEGER
+DECLARE Char1 : CHARACTER
+
+//INITIALISATION
+Str1 ← ""
+alphabets ← "abcdefghijklmnopqrstuvwxyz"
+isPangram ← TRUE
+i ← 0
+Char1 ← ''
+
+//INPUT
+INPUT "Enter string to process: ", Str1
+Str1 ← LCase(Str1)
+
+//PROCESS
+FOR i ← 1 TO LEN(alphabets)
+  Char1 ← MID(alphabets, i, 1)
+  IF LOCATE(Str1, Char1) = 0 THEN isPangram = FALSE
+  IF isPangram = FALSE THEN Exit FOR
+NEXT i
+
+//OUTPUT
+IF isPangram = TRUE
+  THEN
+    OUTPUT "Entered string is a Pangram."
+  ELSE
+    OUTPUT "Entered string is NOT a Pangram."
+END IF
+
+

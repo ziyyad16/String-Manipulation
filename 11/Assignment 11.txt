@@ -1,0 +1,44 @@
+11. not_bad:
+Given a string, find the first appearance of the
+substring 'not' and 'bad'. If the 'bad' follows
+the 'not', replace the whole 'not'...'bad' substring
+with 'good'.
+Return the resulting string.
+Input: 'This dinner is not that bad!' 
+Outputs: This dinner is good!
+
+//DECLARATION
+DECLARE str1,str2,str3 : STRING
+DECLARE i,not1,a,bad : INTEGER
+
+//INITIALISATION
+str1 ← ""
+str2 ← ""
+not ← 0
+bad ← 0
+str3 ← ""
+
+//INPUT
+INPUT "ENTER STRING TO PROCESS :",STR1
+
+//PROCESS
+ a  ←  Len(str1)
+        For i  ←  1 To Len(str1)
+            str2  ←  Mid(str1, i, 3)
+            If str2  ←  "not" Then not1  ←  i
+        Next i
+        For j  ←  1 To Len(str1)
+            str3  ←  Mid(str1, j, 3)
+            If str3  ←  "bad" Then bad  ←  j
+
+        Next j
+
+//OUTPUT
+OUTPUT "processed string :" & Left(str1, not1 - 1) & "good" & Right(str1, a - (bad + 2))
+
+
+
+
+
+
+

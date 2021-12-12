@@ -1,0 +1,22 @@
+6. donuts:
+INPUT an INT count of a number of donuts, OUTPUT a string
+of the form 'Number of donuts: <count>', where <count> is the number
+input. However, if the count is 10 or more, then use the word 'many'
+instead of the actual count.
+So donuts(5) outputs 'Number of donuts: 5'
+and donuts(23) outputs 'Number of donuts: many'
+
+
+//DECLARATION
+DECLARE NOD : INTEGER
+
+//INITIALIZATION
+NOD ← ""
+
+//INPUT
+INPUT "ENTER NUMBER OF DONUTS :" , NOD
+
+//PROCESS
+ IF NOD<10
+    THEN OUTPUT "NUMBER OF DONUTS :" , NOD
+    ELSE OUTPUT "NUMBER OF DONUTS = MANY"

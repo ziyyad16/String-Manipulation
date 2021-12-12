@@ -1,0 +1,38 @@
+8. fix_start:
+Given a string s, return a string
+where all occurences of its first char have
+been changed to '*', except do not change
+the first char itself.
+e.g., 'babble' yields 'ba**le' or 'alpha' outputs 'alph*'
+Assume that the string is length 1 or more
+
+
+//DECLARATION
+DECLARE STR1,STR2 : STRING
+DECLARE CHAR1,CHAR2 : CHARACTER
+DECLARE i : INTEGER
+
+//INITIALISATION
+STR1 ← ""
+STR2 ← ""
+CHAR1 ← ''
+CHAR2 ← ''
+i ← 0
+
+//INPUT
+INPUT "ENTER STRING TO PROCESS :",STR1
+
+//PROCESS
+CHAR1 ← LEFT(STR1,1)
+FOR
+   i ← 2 to LEN(STR1)
+   CHAR2 ← MID(STR1,i,1)
+   IF
+     CHAR2<>CHAR1
+     THEN STR2 ← STR2 & CHAR2
+     ELSE STR2 ← STR2 & '*'
+   ENDIF
+NEXT i
+
+//OUTPUT
+OUTPUT "PROCESSED STRING :" & LEFT(STR1,1) & STR2

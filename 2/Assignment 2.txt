@@ -1,0 +1,34 @@
+2. Replace selected character with another in entered string.
+
+
+//DECLARATIONS
+DECLARE Str1, Str2 : STRING
+DECLARE Char1, Char2, Char3 : CHARACTER
+DECLARE i : INTEGER
+
+//INITIALISE
+Str1 ← ""
+Str2 ← ""
+Char1 ← ''
+Char2 ← ''
+Char3 ← ''
+i ← 0
+
+//INPUT
+INPUT "Enter string to process: ", Str1
+INPUT "Enter character to find from the string: ", Char1
+INPUT "Enter character to replace with in string: ", Char3
+
+//PROCESS
+For i ← 1 TO LEN(Str1)
+  Char2 ← MID(Str1, i, 1)
+  IF Char1 <> Char2
+    THEN
+      Str2 ← Str2 + Char2
+    ELSE
+      Str2 ← Str2 + Char3
+  END IF
+Next i
+
+//OUTPUT
+OUTPUT "Processed string after replacement is: ", Str2

@@ -1,0 +1,31 @@
+
+5. Find the count of vowels characters in an entered string separately. 
+
+//DECLARATIONS
+DECLARE Str1 : STRING
+DECLARE Char1 : CHARACTER
+DECLARE i, vowelCounter: INTEGER
+
+//INITIALISE
+Str1 ← ""
+Char1 ← ''
+i ← 0
+vowelCounter ← 0
+
+//INPUT
+INPUT "Enter string to process: ", Str1
+
+//PROCESS
+For i ← 1 TO LEN(Str1)
+  Char1 ← MID(Str1, i, 1)
+  Char1 ← UCase(Char1)
+  IF Char1 = 'A' OR Char1 = 'E' OR Char1 = 'I' _
+     OR Char1 = 'O' OR Char1 = 'U'
+    THEN
+      vowelCounter ← vowelCounter +1
+  END IF
+Next i
+
+
+//OUTPUT
+OUTPUT "Vowels in string are: ", vowelCounter

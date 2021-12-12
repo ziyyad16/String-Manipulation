@@ -1,0 +1,47 @@
+9. MixUp:
+Given strings a and b, return a single string with a and b separated
+by a space '<a> <b>', except swap the first 2 chars of each string.
+e.g.
+  'mix', pod' -> 'pox mid'
+  'dog', 'dinner' -> 'dig donner'
+  Assume a and b are length 2 or more.
+
+//DECLARATION
+DECLARE STR1,STR2,STR3,STR4,STR5,STR6 : STRING
+DECLARE CHAR1,CHAR2 : CHARACTER
+DECLARE i,j : INTEGER
+
+//INITIALISATION
+STR1 ← ""
+STR2 ← ""
+STR3 ← ""
+STR4 ← ""
+STR5 ← ""
+STR6 ← ""
+CHAR1 ← ''
+CHAR2 ← ''
+i ← 0
+j ← 0
+
+//INPUT
+INPUT "ENTER STRING 1 :",STR1
+INPUT "ENTER STRING 2 :",STR2
+ 
+//PROCESS
+STR3 ← LEFT(STR1,2)
+STR4 ← LEFT(STR2,2)
+
+FOR i ← 3 to LEN(STR1)
+    CHAR1 ← MID(STR1,i,1)
+    STR5 ← STR5 & CHAR1
+NEXT i
+
+FOR j ← 3 to LEN(STR2)
+    CHAR2 ← MID(STR2,j,1)
+    STR6 ← STR6 & CHAR2
+NEXT j
+
+//OUTPUT
+OUTPUT "PROCESSED STRING :", STR4 & STR5 & ' ' & STR3 & STR6
+
+
